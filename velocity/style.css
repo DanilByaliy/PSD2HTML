@@ -18,16 +18,20 @@ p {
   line-height: 1.8;
 }
 
-.btn {
-  font-size: 16px;
-  text-transform: uppercase;
-  border-radius: 4px;
-  padding: 11px 30px;
-  border: 1px solid #fff;
+/* Header */
+.header {
+  padding: 20px 0;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  background-color: #fff;
 }
 
-/* Header */
-header .container {
+.header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,62 +39,104 @@ header .container {
 
 .logo {
   font-size: 25px;
+  letter-spacing: 4px;
   color: #69b9ff;
   text-transform: uppercase;
 }
 
-.active {
+.header__nav ul {
+  display: flex;
+}
+
+.header__nav li + li {
+  margin-left: 40px;
+}
+
+.header__nav a {
+  font-size: 16px;
+  color: #676770;
+  transition: color 0.2s;
+}
+
+.header__nav a:hover {
   color: #0082f3;
 }
 
-nav {
-  width: 183;
-  height: 60px;
-  padding: 20px;
-  display: flex;
-  gap: 40px;
+.header__nav a:active {
+  color: #0065bd;
+}
+
+.header__nav .link-active {
+  color: #0082f3;
 }
 
 /* Welcome section */
 .welcome {
-  height: 594px;
+  min-height: 594px;
+  height: 100vh;
+  padding: 195px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+  text-align: center;
+
+  background-color: #676770;
   background-image: url("./images/welcome-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color: #fff;
 }
 
-.welcome .container {
-  height: 397px;
-  padding-top: 197px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 74px;
-}
+.welcome__heading {
+  margin-bottom: 100px;
 
-.welcome h1 {
   font-size: 60px;
   letter-spacing: 4px;
   text-transform: uppercase;
 }
 
-.welcome a {
+.welcome__links > * + * {
+  margin-left: 20px;
+}
+
+.link {
+  display: inline-block;
+  padding: 10px 30px;
+
   font-size: 16px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 12px 30px;
+
+  border: 1px solid #fff;
   border-radius: 4px;
 }
 
-.buttons {
-  display: flex;
-  gap: 20px;
+.link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-.welcome a:first-of-type {
-  background: #69b9ff;
+.link:active {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.link--primary {
+  padding: 11px 30px;
+  border: none;
+  background-color: #69b9ff;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.link--primary:hover {
+  background-color: #7cc2ff;
+}
+
+.link--primary:active {
+  background-color: #0f8fff;
 }
 
 /* What we do section */
