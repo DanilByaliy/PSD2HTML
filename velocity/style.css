@@ -110,10 +110,6 @@ p {
   color: #0065bd;
 }
 
-.header__nav .link-active {
-  color: #0082f3;
-}
-
 /* Welcome section */
 .welcome {
   min-height: 594px;
@@ -268,6 +264,20 @@ p {
 
 .tabs__nav button + button {
   margin-left: 15px;
+}
+
+.tabs__item {
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .tabs__item img {
