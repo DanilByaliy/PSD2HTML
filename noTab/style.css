@@ -63,6 +63,10 @@ a:active {
   padding: 0 15px;
 }
 
+.container--small {
+  max-width: 1000px;
+}
+
 /* Header */
 .header__container {
   display: flex;
@@ -127,9 +131,6 @@ a:active {
   align-items: center;
   margin-bottom: 30px;
   min-height: 700px;
-}
-
-.welcome__desc {
 }
 
 .welcome__title {
@@ -200,9 +201,12 @@ a:active {
 
 /* Mission section */
 .mission__container {
+  margin-bottom: -150px;
   display: flex;
   align-items: center;
   gap: 90px;
+  position: relative;
+  z-index: -1;
 }
 
 .mission__img {
@@ -240,56 +244,42 @@ a:active {
   filter: blur(50px);
 }
 
-/* Scanner */
-.scanner {
-  background: url("./images/bg-scanner.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0 -18px;
+/* Common */
+.common {
+  margin-top: 100px;
+  padding: 50px 0;
 }
 
-.scanner__container {
-  padding: 55px 220px 40px 240px;
-  display: flex;
-  align-items: end;
-  gap: 270px;
+.common:nth-child(even) .container {
+  flex-direction: row-reverse;
 }
 
-.scanner__desc {
+.common__title {
+  margin-bottom: 20px;
+}
+
+.common__col {
   max-width: 410px;
 }
 
-.scanner__title {
-  font-size: 51px;
-  margin-bottom: 15px;
-}
-
-/* Code */
-.code {
-  background: url("./images/bg-code.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0 -110px;
-  margin-top: 96px;
-  margin-bottom: 150px;
-  padding-top: 50px;
-  padding-bottom: -170px;
-}
-
-.code__container {
+.common__container {
   display: flex;
   align-items: flex-end;
-  justify-content: center;
-  gap: 250px;
+  justify-content: space-between;
 }
 
-.code__desc {
-  max-width: 411px;
+/* Scanner and Code sections differencies */
+.scanner {
+  background: linear-gradient(180deg, #000 -3%, rgba(0, 0, 0, 0) 56%, #000 84%),
+    url("./images/bg-scanner.png");
+  background-size: cover;
 }
 
-.code__title {
-  font-size: 51px;
-  margin-bottom: 18px;
+.code {
+  background: linear-gradient(180deg, #000 -3%, rgba(0, 0, 0, 0) 56%, #000 84%),
+    url("./images/bg-code.png");
+  background-size: cover;
+  background-position: center;
 }
 
 /* Footer */
