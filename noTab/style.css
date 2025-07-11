@@ -11,12 +11,6 @@
   width: 0;
 }
 
-/* 
-font-family: "Noto Sans", sans-serif;
-font-family: "Montserrat", sans-serif;
-font-family: "Avenir", sans-serif;
- */
-
 body {
   margin: 0;
   overflow-x: hidden;
@@ -117,7 +111,7 @@ a:active {
   position: absolute;
   right: -170px;
   top: -240px;
-  z-index: -1;
+  z-index: -10;
 
   transform: rotate(-105deg);
 
@@ -154,20 +148,23 @@ a:active {
   position: absolute;
   left: 20px;
   bottom: 50%;
+  z-index: -10;
+
   background: rgba(96, 92, 234, 0.5);
   filter: blur(50px);
 }
 
 .welcome__text::after {
   content: "";
+  width: 120px;
+  height: 4px;
+
   position: absolute;
   left: 0;
   bottom: 55px;
+  z-index: -5;
 
-  width: 120px;
-  height: 4px;
   background-color: #fff;
-
   transform: rotate(120deg);
 }
 
@@ -176,6 +173,7 @@ a:active {
   position: absolute;
   top: -140px;
   right: -30px;
+  z-index: -5;
 }
 
 .welcome__cta {
