@@ -36,6 +36,10 @@ h6 {
   font-family: "Montserrat", sans-serif;
 }
 
+h2 {
+  font-size: 50px;
+}
+
 p {
   margin: 0;
 }
@@ -92,10 +96,6 @@ a:active {
   position: absolute;
 }
 
-main {
-  margin-top: -50px;
-}
-
 /* Welcome section */
 .welcome {
   padding-bottom: 50px;
@@ -125,9 +125,8 @@ main {
 .welcome__row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-right: 30px;
   margin-bottom: 30px;
+  min-height: 700px;
 }
 
 .welcome__desc {
@@ -137,7 +136,6 @@ main {
   margin-bottom: 130px;
   font-size: 64px;
   line-height: 1.09;
-  /* width: 660px; */
 }
 
 .welcome__text {
@@ -173,7 +171,10 @@ main {
 }
 
 .welcome__img {
-  width: 450px;
+  width: 600px;
+  position: absolute;
+  top: -140px;
+  right: -30px;
 }
 
 .welcome__cta {
@@ -192,32 +193,16 @@ main {
   font-size: 35px;
 }
 
-.cta__img {
-}
-
 .cta__links {
   display: flex;
   gap: 30px;
 }
 
-.cta__link {
-}
-
-.cta__img {
-}
-
 /* Mission section */
-.mission {
-  /* margin-bottom: 96px; */
-}
-
 .mission__container {
   display: flex;
   align-items: center;
   gap: 90px;
-}
-
-.container {
 }
 
 .mission__img {
@@ -231,6 +216,7 @@ main {
   left: -230px;
   bottom: 300px;
   transform: rotate(90deg);
+  z-index: -1;
 }
 
 .mission__desc {
@@ -238,7 +224,6 @@ main {
 }
 
 .mission__title {
-  font-size: 51px;
   margin-bottom: 32px;
   position: relative;
 }
@@ -255,9 +240,6 @@ main {
   filter: blur(50px);
 }
 
-.mission__text {
-}
-
 /* Scanner */
 .scanner {
   background: url("./images/bg-scanner.png");
@@ -268,8 +250,6 @@ main {
 
 .scanner__container {
   padding: 55px 220px 40px 240px;
-  /* padding-top: 55px;
-  padding-bottom: 40px; */
   display: flex;
   align-items: end;
   gap: 270px;
@@ -282,9 +262,6 @@ main {
 .scanner__title {
   font-size: 51px;
   margin-bottom: 15px;
-}
-
-.scanner__text {
 }
 
 /* Code */
