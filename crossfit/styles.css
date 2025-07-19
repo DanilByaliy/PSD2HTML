@@ -75,6 +75,43 @@ p:not([class]):not(:last-child) {
   overflow: hidden;
 }
 
+.title-medium {
+  font-size: clamp(20px, 2.08vw, 40px);
+  line-height: 1.3;
+  color: var(--color-light);
+}
+
+.backdrop-title {
+  position: relative;
+  z-index: 2;
+}
+
+.backdrop-title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: calc(100% + 6px);
+  width: 26px;
+  aspect-ratio: 1;
+  background: url("./icons/plus.png") center/contain no-repeat;
+}
+
+.backdrop-title::after {
+  content: attr(data-title);
+  position: absolute;
+  z-index: -1;
+  top: -0.3em;
+  left: -0.6em;
+  font-family: var(--font-family-accent);
+  font-size: 2.8em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-dark-gray);
+
+  font-weight: 700;
+  line-height: 112px;
+  text-transform: uppercase;
+}
+
 h1,
 h2,
 h3,
@@ -157,6 +194,26 @@ h6 {
 .button--transparent:hover {
   color: var(--color-dark);
   background-color: var(--color-light-gray);
+}
+
+.motivation__card-button {
+  height: 54px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 1.3px;
+}
+
+.motivation__card-button::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+
+  height: 100%;
+  aspect-ratio: 1;
+  background: url("./icons/arrow-top-right.svg") center/70% no-repeat;
+  border: var(--border);
+  border-radius: 50%;
 }
 
 .header__burger-button {
@@ -268,6 +325,50 @@ h6 {
   border-color: var(--color-light-gray);
 }
 
+/* Motivation section */
+.motivation__item:nth-child(even) {
+  background-color: var(--color-dark-alternate);
+}
+
+.motivation__item:nth-child(even) > .motivation__card {
+  flex-direction: row-reverse;
+}
+
+.motivation__card {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: clamp(30px, 13vw, 250px);
+}
+
+.motivation__card-image {
+  margin-block: -60px;
+}
+
+.motivation__card-body {
+  padding-left: 35px;
+}
+
+.motivation__card-title:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.motivation__card-description {
+  max-width: 400px;
+  letter-spacing: 0.8px;
+}
+
+.motivation__card-description:not(:last-child) {
+  margin-bottom: 38px;
+}
+
+@media (max-width: 1919px) {
+  .motivation__card-image {
+    margin-block: -20px;
+    margin-block: 0;
+  }
+}
+
 @media (max-width: 1024px) {
   .header {
     flex-wrap: wrap;
@@ -291,6 +392,15 @@ h6 {
 
   .banner {
     row-gap: 10px;
+  }
+
+  .motivation__card {
+    padding-block: 50px;
+  }
+
+  .motivation__card-image {
+    max-width: 30%;
+    height: auto;
   }
 }
 
@@ -321,5 +431,23 @@ h6 {
 
   .banner__info::before {
     margin-right: 10px;
+  }
+
+  .motivation__card,
+  .motivation__item:nth-child(even) .motivation__card {
+    flex-direction: column-reverse;
+  }
+
+  .motivation__card {
+    row-gap: 30px;
+    padding-block: 30px;
+  }
+
+  .motivation__card-image {
+    max-width: 60%;
+  }
+
+  .motivation__card-description:not(:last-child) {
+    margin-bottom: 20px;
   }
 }
