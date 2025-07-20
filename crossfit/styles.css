@@ -227,6 +227,18 @@ h6 {
   border: var(--border);
 }
 
+.button--transparent::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+
+  height: 100%;
+  aspect-ratio: 1;
+  background: url("./icons/arrow-top-right.svg") center/70% no-repeat;
+  border: var(--border);
+  border-radius: 50%;
+}
+
 .button--transparent:hover {
   color: var(--color-dark);
   background-color: var(--color-light-gray);
@@ -238,18 +250,6 @@ h6 {
   font-weight: 700;
   line-height: 26px;
   letter-spacing: 1.3px;
-}
-
-.motivation__card-button::after {
-  content: "";
-  position: absolute;
-  right: -1px;
-
-  height: 100%;
-  aspect-ratio: 1;
-  background: url("./icons/arrow-top-right.svg") center/70% no-repeat;
-  border: var(--border);
-  border-radius: 50%;
 }
 
 .header__burger-button {
@@ -609,9 +609,9 @@ h6 {
 }
 
 @media (max-width: 767px) {
-  .button {
+  /* .button {
     padding-inline: 18px;
-  }
+  } */
 
   .header {
     padding-top: 10px;
