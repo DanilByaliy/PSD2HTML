@@ -188,6 +188,7 @@ h6 {
   height: var(--input-height);
   padding: 14px 80px 14px 31px;
   background: transparent;
+  color: var(--color-light);
   border: var(--border);
 }
 
@@ -398,6 +399,105 @@ h6 {
   height: 140px;
   width: auto;
 }
+
+/* Join us section */
+.join-us {
+  padding-bottom: 150px;
+  background: var(--color-dark-alternate);
+}
+
+.join-us__video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 900px;
+  background: url("./images/join-us/bg.jpg") center/cover no-repeat;
+}
+
+.join-us__video-play-button {
+  position: absolute;
+  width: 200px;
+  font-weight: 700;
+  color: var(--color-light);
+  text-transform: uppercase;
+  aspect-ratio: 1;
+  font-size: 14px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: var(--border);
+}
+
+.join-us__video-play-button::after {
+  content: "";
+  background: url("./icons/arrow.svg") center/cover no-repeat;
+  transform: rotate(45deg);
+  width: 18px;
+  height: 26px;
+  position: absolute;
+  left: calc(50% + 24px);
+}
+
+.join-us__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.join-us__title {
+  font-size: 180px;
+  line-height: 216px;
+  margin-top: -85px;
+  margin-bottom: 58px;
+  display: flex;
+}
+
+.join-us__title::after {
+  content: "";
+  margin-left: 25px;
+  width: 128px;
+  aspect-ratio: 1;
+  background: url("./icons/bold-arrow.svg") center/contain no-repeat;
+}
+
+.join-us__form-title {
+  font-size: 60px;
+  line-height: 72px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.join-us__form-title.backdrop-title::after {
+  left: 10%;
+  top: -35%;
+}
+
+.join-us__form-subtitle {
+  font-size: 20px;
+  line-height: 33px;
+  text-transform: uppercase;
+}
+
+.join-us__form-body {
+  display: flex;
+  column-gap: 20px;
+}
+
+.input {
+  width: 400px;
+  height: 54px;
+  padding: 15px 25px;
+  border: 1px solid #404040;
+  border-radius: var(--border-radius);
+  background-color: transparent;
+}
+
+.join-us__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+
 
 @media (max-width: 1919px) {
   .motivation__card-image {
