@@ -567,9 +567,11 @@ h6 {
 
 .location__image {
   width: 50%;
+  height: auto;
 }
 
 .location__body {
+  padding: 80px 15px;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -640,6 +642,16 @@ h6 {
 
   .join-us__title:not(:last-child) {
     margin-bottom: 80px;
+  }
+
+  .location {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .location__image,
+  .location__body {
+    width: 100%;
   }
 }
 
@@ -720,5 +732,13 @@ h6 {
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
+  }
+
+  .location__body {
+    padding-block: 40px;
+  }
+
+  .location__text {
+    margin-bottom: 20px;
   }
 }
