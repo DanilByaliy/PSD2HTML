@@ -159,7 +159,8 @@ h6 {
   border-radius: var(--border-radius);
 }
 
-.input::placeholder {
+.input::placeholder,
+select.input:invalid {
   color: var(--color-light-gray);
 }
 
@@ -171,6 +172,18 @@ h6 {
   color: var(--color-dark);
   background-color: var(--color-light-gray);
   outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .header {
@@ -618,6 +631,121 @@ h6 {
 
 .family__image {
   scroll-snap-align: start;
+}
+
+/* Calculate section */
+.calculate {
+  padding-block: 146px;
+  background-color: var(--color-dark-alternate);
+}
+
+.calculate__inner {
+  display: flex;
+  align-items: center;
+  column-gap: 36px;
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr); */
+}
+
+.calculate__body {
+  flex-grow: 1;
+  max-width: 627px;
+}
+
+.calculate__title {
+  margin-bottom: 16px;
+}
+
+.calculate__description {
+  margin-bottom: 30px;
+  max-width: 385px;
+}
+
+.calculate__form-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 30px;
+  margin-bottom: 26px;
+}
+
+.calculate__input.input--wide {
+  grid-column: -1 / 1;
+}
+
+.calculate__table-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 610px;
+}
+
+.calculate__table-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--color-dark);
+  border-radius: 50%;
+}
+
+.calculate__table {
+  position: relative;
+  border-collapse: collapse;
+}
+
+.calculate__table :is(td, th) {
+  padding-right: 30px;
+}
+
+.calculate__table :is(td, th):not(:first-child) {
+  padding-left: 30px;
+}
+
+.calculate__table :is(td, th):not(:last-child) {
+  border-right: 1px solid var(--color-light-gray);
+}
+
+.calculate__table tbody td {
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.calculate__table tbody tr:last-child td:first-child {
+  position: relative;
+}
+
+.calculate__table tbody tr:last-child td:first-child::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 0.9px;
+  background-color: var(--color-light-gray);
+}
+
+.calculate__table th {
+  padding-block: 20px;
+  text-align-last: left;
+  text-transform: uppercase;
+  color: var(--color-light);
+}
+
+.calculate__table td {
+  padding-block: 14px;
+}
+
+.calculate__table tfoot {
+  color: var(--color-light);
+}
+
+.calculate__table tfoot td {
+  padding-top: 33px;
+  padding-bottom: 0;
 }
 
 @media (max-width: 1919px) {
