@@ -816,6 +816,30 @@ input[type="number"] {
   .family__image {
     height: 360px;
   }
+
+  .calculate {
+    padding-block: 100px;
+  }
+
+  .calculate__inner {
+    column-gap: 20px;
+  }
+
+  .calculate__form-body {
+    grid-template-columns: 1fr;
+  }
+
+  .calculate__button {
+    width: 100%;
+  }
+
+  .calculate__table :is(td, th) {
+    padding-block: 10px;
+  }
+
+  .calculate__table tfoot td {
+    padding-top: 10px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -916,5 +940,18 @@ input[type="number"] {
 
   .family__image {
     height: 200px;
+  }
+
+  .calculate {
+    padding-block: 60px;
+  }
+
+  .calculate__inner {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  .calculate__table-wrapper::before {
+    display: none;
   }
 }
