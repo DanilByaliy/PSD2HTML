@@ -32,6 +32,14 @@ body {
   background-color: var(--color-dark);
 }
 
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  fill: currentColor;
+}
+
 a,
 button,
 input,
@@ -746,6 +754,108 @@ input[type="number"] {
 .calculate__table tfoot td {
   padding-top: 33px;
   padding-bottom: 0;
+}
+
+/* Footer */
+.footer {
+  --footerLogoWidth: 20.77%;
+}
+
+.footer__main {
+  padding-top: 140px;
+  padding-bottom: 160px;
+}
+
+.footer__header,
+.footer__body {
+  display: grid;
+  column-gap: 62px;
+}
+
+.footer__header {
+  grid-template-columns: var(--footerLogoWidth) auto;
+  margin-bottom: 60px;
+}
+
+.footer__description {
+  text-align: left;
+}
+
+.footer__body {
+  grid-template-columns: var(--footerLogoWidth) repeat(3, 1fr);
+}
+
+.footer__column-title {
+  font-size: clamp(18px, 1.15vw, 22px);
+  margin-bottom: 15px;
+}
+
+.footer__schedule {
+  margin-bottom: 13px;
+}
+
+.footer__address {
+  font-style: normal;
+  margin-bottom: 35px;
+}
+
+.footer__column-title--has-arrow::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.5em;
+  width: 0.74em;
+  aspect-ratio: 1;
+  background: url("./icons/bold-arrow.svg") center/contain no-repeat;
+  scale: -1 1;
+}
+
+.footer__subscribe {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.footer__subscribe-input {
+  padding-right: 70px;
+}
+
+.footer__subscribe-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  background: url("./icons/arrow-top-right.svg") center/70% no-repeat;
+  border: var(--border);
+  border-radius: 50%;
+}
+
+.footer__subscribe-button:hover {
+  background-color: var(--color-light-gray);
+}
+
+.footer__soc1als-list {
+  display: flex;
+  column-gap: 18px;
+}
+
+.footer__soc1als-link {
+  display: flex;
+  width: 23px;
+  filter: invert(1);
+  transition: var(--transition-duration);
+}
+
+.footer__soc1als-link:hover {
+  filter: invert(0.7);
+}
+
+.footer__extra {
+  padding-block: 15px;
+  background-color: var(--color-dark-alternate);
+}
+
+.footer__copyright {
+  font-size: 14px;
 }
 
 @media (max-width: 1919px) {
