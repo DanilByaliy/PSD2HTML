@@ -775,6 +775,11 @@ input[type="number"] {
 .footer__header {
   grid-template-columns: var(--footerLogoWidth) auto;
   margin-bottom: 60px;
+  align-items: center;
+}
+
+.footer__logo-image {
+  height: auto;
 }
 
 .footer__description {
@@ -950,6 +955,23 @@ input[type="number"] {
   .calculate__table tfoot td {
     padding-top: 10px;
   }
+
+  .footer__header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 30px;
+  }
+
+  .footer__main {
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
+
+  .footer__body {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1063,5 +1085,21 @@ input[type="number"] {
 
   .calculate__table-wrapper::before {
     display: none;
+  }
+
+  .footer__body {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__main {
+    padding-top: 50px;
+  }
+
+  .footer__header {
+    margin-bottom: 30px;
+  }
+
+  .footer__subscribe {
+    margin-bottom: 40px;
   }
 }
