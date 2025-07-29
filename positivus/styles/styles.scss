@@ -5,3 +5,6 @@
 @use "variables" as *;
 @use "utils" as *;
 @use "globals" as *;
+
+@use "./blocks/_button" as *;
+@use "./blocks/_header" as *;
