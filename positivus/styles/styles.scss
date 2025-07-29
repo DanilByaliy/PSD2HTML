@@ -1,10 +1,6 @@
-@use "normalize" as *;
-@use "fonts" as *;
-@use "mixins" as *;
-@use "media" as *;
-@use "variables" as *;
-@use "utils" as *;
-@use "globals" as *;
-
-@use "./blocks/_button" as *;
-@use "./blocks/_header" as *;
+@use "index";
+@use "./blocks/button" as *;
+@use "./blocks/burger-buton" as *;
+@use "./blocks/header" as *;
+@use "./blocks/cross-button" as *;
+@use "./blocks/mobile-overlay" as *;

@@ -1,5 +1,9 @@
 @use "mixins" as *;
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 body {
   @include fluid-text(18, 16);
 
