@@ -57,6 +57,95 @@ button {
   cursor: pointer;
 }
 
+/* Range input - player__time-slider */
+input[type="range"] {
+  margin: 4.05px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #000000;
+  border: 0;
+  width: 100%;
+  height: 1.9px;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  margin-top: -4.05px;
+  width: 12px;
+  height: 12px;
+  background: #000000;
+  border: 0.1px solid #000000;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #0d0d0d;
+}
+
+input[type="range"]::-moz-range-track {
+  background: #000000;
+  border: 0;
+  width: 100%;
+  height: 1.9px;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #000000;
+  border: 0.1px solid #000000;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 4.05px 0;
+  color: transparent;
+  width: 100%;
+  height: 1.9px;
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background: #000000;
+  border: 0;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: #000000;
+  border: 0;
+}
+
+input[type="range"]::-ms-thumb {
+  width: 10px;
+  height: 10px;
+  background: #000000;
+  border: 0.1px solid #000000;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 0px;
+}
+
+input[type="range"]:focus::-ms-fill-lower {
+  background: #000000;
+}
+
+input[type="range"]:focus::-ms-fill-upper {
+  background: #0d0d0d;
+}
+
 body {
   background-color: #f8f8f8;
   font-family: "Open Sans", sans-serif;
@@ -158,4 +247,160 @@ body {
 
 .menu-opener__point::before {
   right: 10px;
+}
+
+/* Welcome */
+.welcome {
+  background-color: #d8d3d2;
+}
+
+.welcome__wrapper {
+  max-width: 1920px;
+  margin-inline: auto;
+  margin-top: -115px;
+  min-height: 900px;
+  background: url("./images/welcome-bg.png") center/cover no-repeat;
+  box-shadow: 10px 0 30px #d8d3d2 inset, -10px 0 30px #d8d3d2 inset;
+}
+
+.welcome__inner {
+  padding-top: 180px;
+}
+
+.welcome__title {
+  margin-bottom: 14px;
+  max-width: 630px;
+  font-size: 95px;
+  font-weight: 600;
+}
+
+.welcome__description {
+  margin-bottom: 50px;
+}
+
+.welcome__buttons-wrapper {
+  display: flex;
+  column-gap: 23px;
+}
+
+/* About */
+.about {
+  margin-bottom: 100px;
+}
+
+.about__player {
+  margin-top: -150px;
+  min-height: 290px;
+  display: flex;
+  flex-direction: row;
+
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.player__image-wrapper {
+  display: block;
+}
+
+.player__body {
+  flex-grow: 1;
+  padding: 35px 50px 35px 21px;
+  display: flex;
+  flex-direction: column;
+}
+
+.player__info {
+  padding-left: 27px;
+}
+
+.player__heading {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.player__title {
+  max-width: 405px;
+  font-size: 38px;
+}
+
+.player__link {
+  display: flex;
+  column-gap: 11px;
+  align-items: center;
+  align-self: start;
+}
+
+.player__link::after {
+  content: "";
+  display: block;
+  width: 19px;
+  height: 13px;
+  background: url("./images/arrow.svg");
+}
+
+.player__labels {
+  display: flex;
+  column-gap: 5px;
+}
+
+.player__label {
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+  color: #8e8b8c;
+  font-size: 14px;
+}
+
+.player__label + .player__label::before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #8e8b8c;
+}
+
+.player__control {
+  margin-top: auto;
+  padding-left: 17px;
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  color: #8e8b8c;
+}
+
+.player__play {
+  width: 70px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid #cecece;
+}
+
+.player__skip {
+  padding-bottom: 6px;
+  padding-top: 30px;
+  width: 46px;
+  height: 50px;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.player__time-slider {
+  flex-grow: 1;
+}
+
+.player__time {
+  font-size: 14px;
+}
+
+.player__mute {
+  width: 50px;
+  aspect-ratio: 1;
+  background: url("./images/mute.svg") center/50% no-repeat;
 }
