@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Podcast</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podcast</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a class="header__logo-link" href="!#">
+        <img
+          class="header__logo-image"
+          src="./images/logo.png"
+          alt="Resonator"
+          width="132"
+          height="20"
+          loading="lazy"
+        />
+      </a>
+      <nav class="header__menu">
+        <ul class="header__menu-list">
+          <li class="header__menu-item">
+            <a href="#!" class="header__menu-link header__menu-link--active"
+              >Homes</a
+            >
+          </li>
+          <li class="header__menu-item">
+            <a href="#!" class="header__menu-link">Pages</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#!" class="header__menu-link">Podcast</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#!" class="header__menu-link">Blog</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#!" class="header__menu-link">Shop</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__widget-holder">
+        <button class="header__search">Search</button>
+        <div class="header__menu-opener menu-opener">
+          <span class="menu-opener__point"></span>
+          <span class="menu-opener__point"></span>
+          <span class="menu-opener__point"></span>
+        </div>
+      </div>
+    </header>
+  </body>
 </html>
