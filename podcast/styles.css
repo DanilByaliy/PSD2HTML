@@ -208,6 +208,11 @@ body {
   margin-inline: auto;
 }
 
+.container--big {
+  max-width: 1920px;
+  padding-inline: 0;
+}
+
 .card {
   width: fit-content;
   display: flex;
@@ -271,17 +276,6 @@ body {
   right: 10px;
   border-radius: 10px;
   background: #fff url("./images/headphones.svg") center no-repeat;
-}
-
-.section-heading {
-  margin-bottom: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.section-heading__link {
-  align-self: end;
 }
 
 .title {
@@ -355,6 +349,17 @@ body {
   width: 20px;
   aspect-ratio: 1;
   background: url("./images/share.svg") center/contain no-repeat;
+}
+
+.section-heading {
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-heading__link {
+  align-self: end;
 }
 
 .pagination {
@@ -656,11 +661,6 @@ body {
   background-color: #f8f8f8;
 }
 
-.top__inner {
-  max-width: 1920px;
-  margin-inline: auto;
-}
-
 .top__heading {
   margin-bottom: 50px;
   text-align: center;
@@ -682,4 +682,52 @@ body {
   justify-content: space-between;
   column-gap: 30px;
   row-gap: 70px;
+}
+
+/* Video */
+.video {
+  padding-block: 100px;
+}
+
+.video__inner {
+  background-color: #f7e8dd;
+}
+
+.video__item {
+  width: 100%;
+  display: block;
+}
+
+.video__wrapper {
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+.video__play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 90px;
+  aspect-ratio: 1;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.video__wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid #000;
+  cursor: pointer;
 }
