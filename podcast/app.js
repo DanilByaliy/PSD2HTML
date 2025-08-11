@@ -15,3 +15,11 @@ const swiper = new Swiper(".swiper", {
     forceToAxis: true,
   },
 });
+
+list = document.querySelectorAll(".card__title-wrapper .card__title");
+
+for (var i = 0; i < list.length; i++) {
+  // retrieve width of span and apply it to parent
+  w = list[i].offsetWidth;
+  list[i].parentNode.style.width = w + 1 + "px";
+}

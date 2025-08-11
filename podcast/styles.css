@@ -542,6 +542,7 @@ body {
 
 .card__body {
   padding-inline: 45px;
+  margin-right: auto; /* align-self: start; */
   max-width: 392px;
 }
 
@@ -549,12 +550,17 @@ body {
   margin-bottom: 5px;
 }
 
-.card__title {
+.card__title-wrapper {
   margin-bottom: 20px;
+  max-width: 100%;
   position: relative;
 }
 
-.card__title::after {
+.card__title {
+  display: inline;
+}
+
+.card__title-wrapper::after {
   content: "";
   position: absolute;
   display: block;
