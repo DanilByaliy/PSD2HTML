@@ -23,3 +23,24 @@ for (var i = 0; i < list.length; i++) {
   w = list[i].offsetWidth;
   list[i].parentNode.style.width = w + 1 + "px";
 }
+
+const containers = document.querySelectorAll(".episode__image-wrapper");
+const container = document.querySelector(".episode__image-wrapper");
+
+const resizeObserver = new ResizeObserver((entries) => {
+  for (const entry of entries) {
+    const size = entry.contentBoxSize[0].inlineSize;
+    console.log(size);
+
+    document.documentElement.style.setProperty(
+      "--pseudo-font-size",
+      size / 5.8 + "px",
+    );
+    document.documentElement.style.setProperty(
+      "--pseudo-offset",
+      -size / 6 + "px",
+    );
+  }
+});
+
+resizeObserver.observe(container);
