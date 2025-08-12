@@ -316,11 +316,14 @@ header {
 
 .blends__link {
   margin-top: auto;
-  display: flex;
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
   column-gap: 5px;
   font-family: "Anton", sans-serif;
   font-size: 16px;
   text-transform: uppercase;
+  transition: all 0.2s ease;
 }
 
 .blends__link::after {
@@ -328,6 +331,11 @@ header {
   width: 28px;
   height: 25px;
   background: url("./images/blends/arrow.svg") center/contain no-repeat;
+}
+
+.blends__link:hover {
+  column-gap: 20px;
+  font-size: 17px;
 }
 
 .blends__item {
@@ -431,6 +439,12 @@ header {
   width: 8px;
   height: 8px;
   border: 1px solid #000;
+  transition: all 0.2s ease;
+}
+
+.cites__pagination-link:not(.cites__pagination-link--active):hover::after {
+  scale: 1.2;
+  transform: rotate(45deg);
 }
 
 .cites__pagination-link--active::after {
