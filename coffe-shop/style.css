@@ -56,3 +56,89 @@ body {
   max-width: 1920px;
   margin-inline: auto;
 }
+
+/* Header */
+header {
+  border-bottom: 1px solid #000;
+}
+
+.header__greeting-wrapper {
+  background-color: #000;
+}
+
+.header__greeting {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+.header__main {
+  margin-inline: auto;
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+}
+
+.header__main::after {
+  content: "";
+  display: block;
+  background: url("./images/star.png") center/55% no-repeat;
+  align-self: stretch;
+  aspect-ratio: 1;
+  border-left: 1px solid #000;
+}
+
+.header__main-inner {
+  padding: 37px;
+  height: 100px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 47px;
+}
+
+.header__list > *,
+.header__widget-holder > * {
+  display: inline-block;
+  position: relative;
+}
+
+.header__list > *::after,
+.header__widget-holder > *::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+
+  height: 3px;
+  width: 110%;
+  background: url("./images/underline.svg") center no-repeat;
+  background-size: 100% 100%;
+}
+
+.header__widget-holder > *::before {
+  width: 58px;
+}
+
+.cart {
+  display: inline-flex;
+  column-gap: 3px;
+}
+
+.cart::after {
+  content: "(0)";
+  display: block;
+}
