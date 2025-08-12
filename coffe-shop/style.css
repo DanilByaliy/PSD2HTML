@@ -142,3 +142,96 @@ header {
   content: "(0)";
   display: block;
 }
+
+/* Welcome */
+
+.welcome {
+  max-height: 940px;
+  height: 100%;
+}
+
+.welcome__inner {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.welcome__inner::before,
+.welcome__inner::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 85px;
+  height: 65px;
+  background: url("./images/welcome/arrow.svg") center/contain no-repeat #fbed81;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.welcome__inner::before {
+  left: 0;
+}
+
+.welcome__inner::after {
+  right: 0;
+  transform: rotateY(180deg);
+}
+
+.welcome__image-wrapper {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  aspect-ratio: 100/94;
+  overflow: hidden;
+}
+
+.welcome__image {
+  position: absolute;
+  width: 100%;
+  bottom: -42px;
+  left: 50%;
+  translate: -50% 0;
+}
+
+.welcome__body {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: url("./images/welcome/backgroung.png") center/cover no-repeat;
+}
+
+.welcome__title {
+  box-sizing: content-box;
+  padding-left: 145px;
+  max-width: 390px;
+  font-size: 120px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.welcome__title::before {
+  content: "";
+  position: absolute;
+  top: -104px;
+  right: -6px;
+  display: block;
+  width: 135px;
+  height: 135px;
+  background: url("./images/welcome/label.png") center/contain no-repeat;
+}
+
+.welcome__title::after {
+  content: "";
+  position: absolute;
+  bottom: -34px;
+  right: -56px;
+  display: block;
+  width: 220px;
+  height: 70px;
+  background: url("./images/welcome/text.png") center/contain no-repeat;
+}
