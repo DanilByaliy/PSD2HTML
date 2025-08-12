@@ -786,3 +786,70 @@ button {
   border-left: 16px solid #000;
   cursor: pointer;
 }
+
+/* Footer */
+.footer {
+  background-color: var(--black-color);
+}
+
+.footer__inner {
+  padding-top: 134px;
+  padding-bottom: 150px;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 50px;
+  color: #cccccc;
+}
+
+.footer__logo {
+  margin-bottom: 11px;
+}
+
+.footer__logo-description {
+  font-size: 13px;
+  color: #969696;
+}
+
+.footer__title {
+  margin-bottom: 110px;
+}
+
+.footer__body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  row-gap: 80px;
+}
+
+.footer__body > * {
+  max-width: 303px;
+}
+
+.footer__subtitle {
+  margin-bottom: 23px;
+  color: #969696;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+.footer__contacts > a {
+  display: inline-block;
+}
+
+.footer__address > * {
+  font-style: normal;
+}
+
+.footer__socials-list {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.footer__socials-link:hover {
+  opacity: 0.7;
+}
+
+.footer__label {
+  font-size: 13px;
+}
