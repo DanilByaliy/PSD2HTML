@@ -80,6 +80,32 @@ body {
   font-size: 17px;
 }
 
+.button {
+  padding: 21px 33px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Anton", sans-serif;
+  color: #fff;
+  background: url("./images/cities-bg.svg") center/cover no-repeat;
+  background-color: #000;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
 /* Header */
 header {
   border-bottom: 1px solid #000;
@@ -531,20 +557,6 @@ address {
   content: "..............................";
 }
 
-.cities__button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 156px;
-  height: 59px;
-  font-family: "Anton", sans-serif;
-  color: #fff;
-  background: url("./images/cities-bg.svg") center/cover no-repeat;
-  background-color: #000;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-}
-
 /* Coffee */
 .coffee__title {
   padding: 37px 50px;
@@ -637,4 +649,55 @@ address {
 
 .food__link-wrapper {
   width: 120px;
+}
+
+/* Reserve */
+.reserve__inner {
+  padding: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("./images/reserve-bg.png") center/cover no-repeat;
+}
+
+.reserve__main {
+  max-width: 1320px;
+}
+
+.reserve__title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.reserve__form {
+  display: flex;
+  align-items: end;
+  column-gap: 35px;
+}
+
+.reserve__form > *:not(.button) {
+  width: 346px;
+  height: 41px;
+  font-family: "Space Mono", monospace;
+  font-size: 18px;
+  color: #202020;
+  border: none;
+  border-bottom: 1px solid #000;
+  background-color: transparent;
+}
+
+.reserve__secect {
+  appearance: none;
+  background-image: url("./images/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 18px 11px;
+}
+
+.reserve__date::-webkit-calendar-picker-indicator,
+.reserve__time::-webkit-calendar-picker-indicator {
+  background-image: url("./images/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 18px 11px;
 }

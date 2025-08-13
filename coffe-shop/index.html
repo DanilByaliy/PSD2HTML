@@ -228,7 +228,7 @@
                   </div>
                 </div>
               </div>
-              <a href="#!" class="cities__button">Contact Us</a>
+              <a href="#!" class="cities__button button">Contact Us</a>
             </div>
           </div>
         </div>
@@ -345,6 +345,44 @@
                 <a href="" class="food__link link">View More</a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reserve">
+        <div class="reserve__inner container">
+          <div class="reserve__main">
+            <h3 class="reserve__title title">Reserve Your Table</h3>
+            <form class="reserve__form">
+              <select class="reserve__secect" name="select">
+                <option value="value1" selected>1 person</option>
+                <option value="value2">2 persons</option>
+                <option value="value3">3 persons</option>
+                <option value="value3">4 persons</option>
+              </select>
+              <label class="visually-hidden" for="start">Date</label>
+              <input
+                class="reserve__date"
+                type="date"
+                id="start"
+                name="trip-start"
+                value="2022-10-12"
+                min="2018-01-01"
+                max="2018-12-31"
+              />
+              <label class="visually-hidden" for="appointment">Time</label>
+              <input
+                class="reserve__time"
+                type="time"
+                id="appointment"
+                name="appointment"
+                min="09:00"
+                max="18:00"
+                value="11:00"
+                required
+              />
+              <a href="#!" class="reserve__button button">Book a table</a>
+            </form>
           </div>
         </div>
       </section>
