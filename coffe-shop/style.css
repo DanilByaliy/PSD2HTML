@@ -57,6 +57,29 @@ body {
   margin-inline: auto;
 }
 
+.link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  column-gap: 5px;
+  font-family: "Anton", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.link::after {
+  content: "";
+  width: 28px;
+  height: 25px;
+  background: url("./images/blends/arrow.svg") center/contain no-repeat;
+}
+
+.link:hover {
+  column-gap: 20px;
+  font-size: 17px;
+}
+
 /* Header */
 header {
   border-bottom: 1px solid #000;
@@ -283,6 +306,10 @@ header {
   color: #202020;
 }
 
+.title--medium {
+  font-size: 35px;
+}
+
 .title--small {
   font-size: 50px;
 }
@@ -317,26 +344,6 @@ header {
 
 .blends__link {
   margin-top: auto;
-  display: inline-flex;
-  width: fit-content;
-  align-items: center;
-  column-gap: 5px;
-  font-family: "Anton", sans-serif;
-  font-size: 16px;
-  text-transform: uppercase;
-  transition: all 0.2s ease;
-}
-
-.blends__link::after {
-  content: "";
-  width: 28px;
-  height: 25px;
-  background: url("./images/blends/arrow.svg") center/contain no-repeat;
-}
-
-.blends__link:hover {
-  column-gap: 20px;
-  font-size: 17px;
 }
 
 .blends__item {
@@ -544,7 +551,7 @@ address {
 }
 
 .coffee__body {
-  border-block: 1px solid #000;
+  border-top: 1px solid #000;
   border-left: 1px solid #000;
 
   display: grid;
@@ -567,7 +574,7 @@ address {
   height: 34px;
   top: 15px;
   right: 0;
-  font-family: "Anton", sans-serif; 
+  font-family: "Anton", sans-serif;
 }
 
 .coffee__card--sold::after {
@@ -583,4 +590,51 @@ address {
 
 .coffee__card-image {
   margin-bottom: 30px;
+}
+
+/* Food */
+.food {
+  border-block: 1px solid #000;
+  background-color: #fdf1d9;
+}
+
+.food__inner {
+  display: grid;
+  grid-template-columns: 4fr 5fr;
+}
+
+.food__side {
+  padding: 50px;
+  padding-bottom: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #000;
+}
+
+.food__title {
+  text-wrap: balance;
+}
+
+.food__card {
+  padding: 46px 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.food__card + .food__card {
+  border-top: 1px solid #000;
+}
+
+.food__body {
+  max-width: 330px;
+}
+
+.food__card-title {
+  margin-bottom: 6px;
+}
+
+.food__link-wrapper {
+  width: 120px;
 }
