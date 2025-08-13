@@ -450,3 +450,89 @@ header {
 .cites__pagination-link--active::after {
   background-color: #000;
 }
+
+/* Cities */
+.cities {
+  background-color: #f8f8f8;
+  border-block: 1px solid #000;
+}
+
+.cities__inner {
+  display: flex;
+  border-left: 1px solid #000;
+}
+
+.cities__title {
+  padding: 50px 22px;
+  text-wrap: nowrap;
+  writing-mode: sideways-lr;
+  border-right: 1px solid #000;
+}
+
+.cities__card {
+  padding: 100px 60px;
+  display: flex;
+}
+
+.cities__image-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cities__main {
+  box-sizing: content-box;
+  padding: 45px 60px;
+  max-width: 355px;
+}
+
+.cities__card-title {
+  margin-bottom: 24px;
+}
+
+.cities__body {
+  margin-bottom: 45px;
+}
+
+.cities__contacts {
+  margin-bottom: 24px;
+}
+
+.cities__contacts > * {
+  margin-bottom: 10px;
+}
+
+address {
+  font-style: normal;
+}
+
+.cities__schedule-item {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.cities__schedule-item > span {
+  text-wrap: nowrap;
+}
+
+.filler {
+  overflow: hidden;
+}
+
+.filler::after {
+  content: "..............................";
+}
+
+.cities__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 156px;
+  height: 59px;
+  font-family: "Anton", sans-serif;
+  color: #fff;
+  background: url("./images/cities-bg.svg") center/cover no-repeat;
+  background-color: #000;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
