@@ -276,6 +276,8 @@ header {
 }
 
 .title {
+  font-size: 70px;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #202020;
@@ -283,7 +285,6 @@ header {
 
 .title--small {
   font-size: 50px;
-  font-weight: 400;
 }
 
 .title--tiny {
@@ -535,4 +536,51 @@ address {
   background-color: #000;
   letter-spacing: 1.4px;
   text-transform: uppercase;
+}
+
+/* Coffee */
+.coffee__title {
+  padding: 37px 50px;
+}
+
+.coffee__body {
+  border-block: 1px solid #000;
+  border-left: 1px solid #000;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.coffee__card {
+  padding: 38px 42px;
+  border-right: 1px solid #000;
+  position: relative;
+}
+
+.coffee__card--sold::after,
+.coffee__card--new::after {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding-inline: 20px;
+  height: 34px;
+  top: 15px;
+  right: 0;
+  font-family: "Anton", sans-serif; 
+}
+
+.coffee__card--sold::after {
+  content: "SOLD";
+  color: #fff;
+  background-color: #202020;
+}
+
+.coffee__card--new::after {
+  content: "NEW";
+  background-color: #fbed81;
+}
+
+.coffee__card-image {
+  margin-bottom: 30px;
 }
