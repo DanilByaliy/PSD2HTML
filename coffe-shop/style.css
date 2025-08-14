@@ -57,6 +57,10 @@ body {
   margin-inline: auto;
 }
 
+.section-title {
+  padding: 37px 50px;
+}
+
 .link {
   display: inline-flex;
   width: fit-content;
@@ -286,13 +290,17 @@ header {
 }
 
 /* Blends */
+.blends__main {
+  border-block: 1px solid #000;
+}
+
 .blends__labels {
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 10px;
-  border-block: 1px solid #000;
+  border-top: 1px solid #000;
 }
 
 .blends__label {
@@ -558,10 +566,6 @@ address {
 }
 
 /* Coffee */
-.coffee__title {
-  padding: 37px 50px;
-}
-
 .coffee__body {
   border-top: 1px solid #000;
   border-left: 1px solid #000;
@@ -700,4 +704,25 @@ address {
   background-repeat: no-repeat;
   background-position: right center;
   background-size: 18px 11px;
+}
+
+/* Team */
+.team__title {
+  border-block: 1px solid #000;
+}
+
+.team__body {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+}
+
+.team__member-card {
+  padding: 37px;
+  border-right: 1px solid #000;
+}
+
+.team__member-name {
+  margin-bottom: 2px;
 }
