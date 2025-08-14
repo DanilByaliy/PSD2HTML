@@ -27,6 +27,10 @@ a {
   color: inherit;
 }
 
+address {
+  font-style: normal;
+}
+
 h1,
 h2,
 h3,
@@ -55,6 +59,12 @@ body {
 .container {
   max-width: 1920px;
   margin-inline: auto;
+}
+
+.links-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section-title {
@@ -95,6 +105,39 @@ body {
   background-color: #000;
   letter-spacing: 1.4px;
   text-transform: uppercase;
+}
+
+.underline {
+  display: inline-block;
+  position: relative;
+}
+
+.underline::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  translate: -50% 0;
+
+  height: 3px;
+  width: 58px;
+  background: url("./images/underline.svg") center no-repeat;
+  background-size: 100% 100%;
+}
+
+.underline--full-width::before {
+  width: 110%;
+}
+
+.cart {
+  display: inline-flex;
+  column-gap: 3px;
+}
+
+.cart::after {
+  content: "(0)";
+  display: block;
 }
 
 .visually-hidden {
@@ -155,49 +198,15 @@ header {
 }
 
 .header__list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   column-gap: 47px;
 }
 
-.header__list > *,
-.header__widget-holder > * {
-  display: inline-block;
-  position: relative;
-}
-
-.header__list > *::after,
-.header__widget-holder > *::before {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  translate: -50% 0;
-
-  height: 3px;
-  width: 110%;
-  background: url("./images/underline.svg") center no-repeat;
-  background-size: 100% 100%;
-}
-
-.header__widget-holder > *::before {
-  width: 58px;
-}
-
-.cart {
-  display: inline-flex;
-  column-gap: 3px;
-}
-
-.cart::after {
-  content: "(0)";
-  display: block;
+.header__widget-holder {
+  display: flex;
+  column-gap: 23px;
 }
 
 /* Welcome */
-
 .welcome {
   max-height: 940px;
   height: 100%;
@@ -541,10 +550,6 @@ header {
 
 .cities__contacts > * {
   margin-bottom: 10px;
-}
-
-address {
-  font-style: normal;
 }
 
 .cities__schedule-item {
