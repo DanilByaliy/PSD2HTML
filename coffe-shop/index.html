@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee Shop</title>
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -141,35 +148,63 @@
 
       <section class="cites">
         <div class="cites__inner container">
-          <div class="cites__swiper">
-            <div class="cites__swiper-card">
-              <div class="cites__rating">
-                <span class="cites__rating-item"></span>
-                <span class="cites__rating-item"></span>
-                <span class="cites__rating-item"></span>
-                <span class="cites__rating-item"></span>
-                <span class="cites__rating-item"></span>
+          <div class="cites__main">
+            <div class="swiper my-swiper cites__swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="cites__swiper-card">
+                    <div class="cites__rating">
+                      <span class="cites__rating-item"></span>
+                      <span class="cites__rating-item"></span>
+                      <span class="cites__rating-item"></span>
+                      <span class="cites__rating-item"></span>
+                      <span class="cites__rating-item"></span>
+                    </div>
+                    <h3 class="cites__title">
+                      "Another reason people just can't keep away from their
+                      local coffee shop is the quality of coffee that's on
+                      offer. "
+                    </h3>
+                    <p class="cites__author">Henry Monro</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="cites__swiper-card">
+                    <div class="cites__rating">
+                      <span class="cites__rating-item"></span>
+                      <span class="cites__rating-item"></span>
+                      <span class="cites__rating-item"></span>
+                      <span class="cites__rating-item"></span>
+                      <span class="cites__rating-item"></span>
+                    </div>
+                    <h3 class="cites__title">
+                      "Another reason people just can't keep away from their
+                      local coffee shop is the quality of coffee that's on
+                      offer. "
+                    </h3>
+                    <p class="cites__author">Henry Monro</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="cites__swiper-card">
+                    <div class="cites__rating">
+                      <span class="cites__rating-item"></span>
+                      <span class="cites__rating-item"></span>
+                      <span class="cites__rating-item"></span>
+                      <span class="cites__rating-item"></span>
+                      <span class="cites__rating-item"></span>
+                    </div>
+                    <h3 class="cites__title">
+                      "Another reason people just can't keep away from their
+                      local coffee shop is the quality of coffee that's on
+                      offer. "
+                    </h3>
+                    <p class="cites__author">Henry Monro</p>
+                  </div>
+                </div>
               </div>
-              <h3 class="cites__title">
-                "Another reason people just can't keep away from their local
-                coffee shop is the quality of coffee that's on offer. "
-              </h3>
-              <p class="cites__author">Henry Monro</p>
+              <div class="cites__pagination swiper-pagination"></div>
             </div>
-            <ul class="cites__pagination">
-              <li class="cites__pagination-item">
-                <a class="cites__pagination-link" href="#!"></a>
-              </li>
-              <li class="cites__pagination-item">
-                <a
-                  class="cites__pagination-link cites__pagination-link--active"
-                  href="#!"
-                ></a>
-              </li>
-              <li class="cites__pagination-item">
-                <a class="cites__pagination-link" href="#!"></a>
-              </li>
-            </ul>
           </div>
           <div class="cites__image-wrapper">
             <img

@@ -4,6 +4,12 @@
   width: 0;
 }
 
+:root {
+  --pagination-height: 20px;
+  --swiper-pagination-bottom: 0;
+  --swiper-pagination-bullet-horizontal-gap: 0;
+}
+
 *,
 *::after,
 *::before {
@@ -428,7 +434,14 @@ header {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.cites__main {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
 .cites__swiper {
+  padding-bottom: 11%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -436,7 +449,14 @@ header {
   row-gap: 73px;
 }
 
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .cites__swiper-card {
+  padding: 30px;
   max-width: 760px;
   display: flex;
   flex-direction: column;
@@ -456,7 +476,7 @@ header {
 }
 
 .cites__title {
-  margin-bottom: 53px;
+  margin-bottom: 8%;
   text-align: center;
   font-size: 35px;
   font-weight: 400;
@@ -467,20 +487,23 @@ header {
 .cites__pagination {
   display: flex;
   align-items: center;
+  justify-content: center;
   column-gap: 30px;
   height: 30px;
 }
 
-.cites__pagination-link {
+.swiper-pagination-bullet {
   box-sizing: content-box;
   padding: 12px;
   position: relative;
   display: block;
   width: 8px;
   height: 8px;
+  background-color: transparent;
+  opacity: 1;
 }
 
-.cites__pagination-link::after {
+.swiper-pagination-bullet::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -490,16 +513,19 @@ header {
   width: 8px;
   height: 8px;
   border: 1px solid #000;
+  opacity: 1;
+  background-color: transparent;
   transition: all 0.2s ease;
+  border-radius: 0;
 }
 
-.cites__pagination-link:not(.cites__pagination-link--active):hover::after {
+.swiper-pagination-bullet-active::before {
+  background-color: #000;
+}
+
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover::before {
   scale: 1.2;
   transform: rotate(45deg);
-}
-
-.cites__pagination-link--active::after {
-  background-color: #000;
 }
 
 /* Cities */
