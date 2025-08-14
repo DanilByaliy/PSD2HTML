@@ -218,18 +218,13 @@ header {
   height: 100%;
 }
 
-.welcome__inner {
+.welcome__swiper-card {
   display: flex;
   align-items: center;
-  position: relative;
 }
 
-.welcome__inner::before,
-.welcome__inner::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  display: block;
+.swiper-button-prev,
+.swiper-button-next {
   width: 85px;
   height: 65px;
   background: url("./images/welcome/arrow.svg") center/contain no-repeat #fbed81;
@@ -237,11 +232,16 @@ header {
   cursor: pointer;
 }
 
-.welcome__inner::before {
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper-button-prev {
   left: 0;
 }
 
-.welcome__inner::after {
+.swiper-button-next {
   right: 0;
   transform: rotateY(180deg);
 }
@@ -449,7 +449,7 @@ header {
   row-gap: 73px;
 }
 
-.swiper-slide {
+.cites__swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
