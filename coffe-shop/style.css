@@ -161,7 +161,12 @@ body {
 
 /* Header */
 header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
   border-bottom: 1px solid #000;
+  box-shadow: 0 10px 10px #00000010;
+  z-index: 2;
 }
 
 .header__greeting-wrapper {
