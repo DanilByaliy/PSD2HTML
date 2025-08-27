@@ -1,4 +1,7 @@
 import "./scss/styles.scss";
+import { useDynamicAdapt } from "./tools/dynamic-adapt.js";
+
+useDynamicAdapt();
 
 let burger = document.querySelector(".header__burger");
 let menu = document.querySelector(".header__menu");

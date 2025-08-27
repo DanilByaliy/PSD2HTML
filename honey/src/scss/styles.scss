@@ -158,13 +158,21 @@ h4 {
   }
 
   &__logo {
+    display: block;
     flex-grow: 1;
+    flex-shrink: 0;
     z-index: 3;
   }
 
   &__logo-image {
+    display: block;
     max-width: 100%;
     height: auto;
+
+    @media (max-width: 768px) {
+      width: auto;
+      @include adaptiveValue("max-height", 49, 35, 768, 320);
+    }
   }
 
   &__burger {
@@ -177,6 +185,7 @@ h4 {
 
   &__menu-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     @include adaptiveValue("column-gap", 40, 25, 1300, 992);
   }
@@ -199,6 +208,7 @@ h4 {
 
   &__cart {
     position: relative;
+    margin-right: 8px;
   }
 
   &__cart {
@@ -297,8 +307,7 @@ h4 {
       padding: 105px 10px 20px 10px;
       transition: all 0.3s ease 0s;
       z-index: 1;
-
-      @include adaptiveValue("font-size", 30, 15, 992, 320);
+      @include adaptiveValue("font-size", 25, 15, 992, 320);
 
       &--active {
         top: 0;
@@ -307,7 +316,7 @@ h4 {
       &-list {
         flex-direction: column;
         align-items: start;
-        row-gap: 10px/15px * 1em;
+        row-gap: calc(10 / 15) * 1em;
       }
     }
   }
