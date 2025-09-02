@@ -243,3 +243,67 @@ body {
     }
   }
 }
+
+.tips {
+  @include adaptiveValue("padding-inline", 44, 30);
+}
+
+.slider-tips {
+  position: relative;
+
+  &__body {
+    @include adaptiveValue("margin-inline", -32, -15);
+    & {
+      @include adaptiveValue("padding", 32, 15);
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 0 0 32px rgba(92, 92, 92, 0.2);
+      }
+    }
+  }
+
+  &__image {
+    padding-bottom: calc(251 / 391) * 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    flex: 1 1 auto;
+    align-items: flex-start;
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    color: inherit;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: all 0.3s ease 0s;
+    &:not(:last-child) {
+      margin-bottom: calc(8 / 24) * 1em;
+    }
+
+    @include adaptiveValue("font-size", 24, 18);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $orangeColor;
+      }
+    }
+  }
+
+  &__text {
+    color: $grayColor;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
