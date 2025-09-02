@@ -1,0 +1,71 @@
+$mainColor: #3a3a3a;
+$orangeColor: #e89f71;
+$grayColor: #898989;
+$darkColor: #616161;
+
+$minWidth: 320;
+$maxWidth: 1440;
+$maxWidthContainer: 1270;
+
+@mixin adaptiveValue(
+  $property,
+  $startSize,
+  $minSize,
+  $from: $maxWidth,
+  $to: $minWidth
+) {
+  $addSize: $startSize - $minSize;
+  #{$property}: $startSize + px;
+  @media (max-width: #{$from + px}) {
+    #{$property}: calc(
+      #{$minSize + px} + #{$addSize} * ((100vw - #{$to + px}) / #{$from - $to})
+    );
+  }
+
+  @media (max-width:  #{$to + px}) {
+    #{$property}: $minSize + px;
+  }
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  max-width: $maxWidthContainer + px;
+  padding-inline: 15px;
+  margin-inline: auto;
+}
+
+.title {
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  @include adaptiveValue("font-size", 40, 24);
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+  min-height: 48px;
+
+  &--white {
+    color: $orangeColor;
+    background-color: #fff;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $orangeColor;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.page {
+  flex: 1 1 auto;
+}
