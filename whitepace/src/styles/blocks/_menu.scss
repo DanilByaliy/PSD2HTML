@@ -1,0 +1,116 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.menu {
+  &__body {
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    @include adaptiveValue("column-gap", 32, 20, 1152);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-inline: 3px;
+    padding-block: 5px;
+    position: relative;
+
+    @media (any-hover: hover) {
+      &:hover {
+        .menu__sub-list {
+          translate: 0 0;
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+
+        .menu__arrow {
+          rotate: -180deg;
+        }
+
+        .menu__arrow,
+        .menu__link {
+          color: $secondaryColor;
+        }
+      }
+    }
+
+    @media (min-width: $md2+px) {
+      &._hover {
+        .menu__sub-list {
+          translate: 0 0;
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+
+        .menu__arrow {
+          rotate: -180deg;
+        }
+
+        .menu__arrow,
+        .menu__link {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+
+  &__link {
+    margin-right: 10px;
+  }
+
+  &__arrow {
+    display: inline-block;
+    padding: 10px;
+    font-size: 5px;
+    transition: all 0.3s ease 0s;
+  }
+
+  &__sub-list {
+    padding: 15px;
+    background-color: $accentColor;
+
+    @media (min-width: $md2+px) {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease 0s;
+      translate: 0 10px;
+      min-width: 200px;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      pointer-events: none;
+      z-index: 5;
+    }
+  }
+
+  &__sub-item {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+      @media (max-width: $md3+px) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__sub-link {
+    color: #fff;
+    line-height: 1.2;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__icon {
+  }
+}
+
+.icon-menu {
+}

@@ -52,47 +52,7 @@
   }
 }
 
-.menu {
-  &__body {
-  }
 
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    @include adaptiveValue("column-gap", 32, 20, 1152);
-  }
-
-  &__item {
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-
-  &__link {
-    margin-right: 10px;
-  }
-
-  &__arrow {
-    display: inline-block;
-    padding: 10px;
-    font-size: 5px;
-  }
-
-  &__sub-list {
-    position: absolute;
-    top: 100%;
-  }
-
-  &__sub-item {
-  }
-
-  &__sub-link {
-  }
-
-  &__icon {
-  }
-}
 
 .actions-header {
   display: flex;
@@ -103,7 +63,4 @@
 
   &__try {
   }
-}
-
-.icon-menu {
 }
