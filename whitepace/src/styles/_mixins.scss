@@ -1,11 +1,11 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 @mixin adaptiveValue(
   $property,
   $startSize,
   $minSize,
-  $from: $maxWidth,
-  $to: $minWidth
+  $to: $minWidth,
+  $from: $maxWidthContainer
 ) {
   $addSize: $startSize - $minSize;
   #{$property}: $startSize + px;

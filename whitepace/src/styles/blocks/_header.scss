@@ -1,0 +1,109 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.header {
+  color: $whiteColor;
+
+  &__wrapper {
+    background-color: $primaryColor;
+  }
+
+  &__container {
+  }
+
+  &__body {
+    min-height: 92px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__main {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 15px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 28px;
+    font-weight: 600;
+
+    &::before {
+      font-weight: normal;
+    }
+  }
+
+  &__menu {
+  }
+
+  &__actions {
+    flex-shrink: 0;
+    @include adaptiveValue("margin-left", 60, 24, 1152);
+  }
+
+  &__login {
+  }
+
+  &__try {
+  }
+}
+
+.menu {
+  &__body {
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    @include adaptiveValue("column-gap", 32, 20, 1152);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__link {
+    margin-right: 10px;
+  }
+
+  &__arrow {
+    display: inline-block;
+    padding: 10px;
+    font-size: 5px;
+  }
+
+  &__sub-list {
+    position: absolute;
+    top: 100%;
+  }
+
+  &__sub-item {
+  }
+
+  &__sub-link {
+  }
+
+  &__icon {
+  }
+}
+
+.actions-header {
+  display: flex;
+  column-gap: 24px;
+
+  &__login {
+  }
+
+  &__try {
+  }
+}
+
+.icon-menu {
+}
