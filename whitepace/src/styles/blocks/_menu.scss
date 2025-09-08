@@ -33,6 +33,10 @@
       padding: 110px 15px 30px 15px;
       box-sizing: border-box;
 
+      @media (max-width: $md3+px) {
+        padding-top: 75px;
+      }
+
       &::before {
         content: "";
         position: fixed;
@@ -43,6 +47,10 @@
         transition: left 0.3s ease 0s;
         background-color: $primaryColor;
         z-index: 2;
+
+        @media (max-width: $md3+px) {
+          height: 60px;
+        }
       }
 
       &._active {
@@ -51,6 +59,10 @@
           left: 0;
         }
       }
+    }
+
+    & .actions-header__button {
+      margin-top: 15px;
     }
   }
 
