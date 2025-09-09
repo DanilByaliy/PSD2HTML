@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
     <title>Furniture</title>
   </head>
   <body>
@@ -121,6 +126,74 @@
         </div>
       </header>
       <main class="page">
+        <section class="page__main-slider main-slider">
+          <div class="main-slider__container container">
+            <div class="main-slider__body">
+              <div class="main-slider__content content-main">
+                <h1 class="content-main__title">
+                  High-Quality Furniture Just For You
+                </h1>
+                <div class="content-main__text">
+                  Our furniture is made from selected and best quality materials
+                  that are suitable for your dream home
+                </div>
+                <a href="#!" class="content-main__button button">Shop Now</a>
+              </div>
+              <div class="main-slider__slider slider-main">
+                <div class="slider-main__controls controls-slider-main">
+                  <div class="controls-slider-main__dots"></div>
+                  <div class="controls-slider-main__arrows slider-arrows">
+                    <button
+                      type="button"
+                      class="slider-arrow slider-arrow_prev _icon-arrow-down"
+                    >
+                      >
+                    </button>
+                    <button
+                      type="button"
+                      class="slider-arrow slider-arrow_next _icon-arrow-down"
+                    >
+                      >
+                    </button>
+                  </div>
+                </div>
+                <div class="slider-main__body swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide slider-main__slide">
+                      <div class="slider-main__image _ibg">
+                        <img src="img/main-slider/01.jpg" alt="" />
+                      </div>
+                      <a href="#!" class="slider-main__content">
+                        <div class="slider-main__title">Bohauss</div>
+                        <div class="slider-main__text">
+                          Luxury big sofa 2-seat
+                        </div>
+                        <div class="slider-main__price _icon-arrow-link">
+                          Rp 17.000.000
+                        </div>
+                      </a>
+                    </div>
+                    <div class="swiper-slide slider-main__slide">
+                      <div class="slider-main__image _ibg">
+                        <img src="img/main-slider/01.jpg" alt="" />
+                      </div>
+                      <a href="#!" class="slider-main__content">
+                        <div class="slider-main__title">Bohauss</div>
+                        <div class="slider-main__text">
+                          Luxury big sofa 2-seat
+                        </div>
+                        <div class="slider-main__price _icon-arrow-link">
+                          Rp 17.000.000
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section class="page__products products">
           <div class="products__container container">
             <h2 class="products__title title">Our Products</h2>
@@ -342,8 +415,7 @@
             <div class="footer__main">
               <a href="#!" class="footer__logo">Funiro.</a>
               <div class="footer__text"></div>
-              <div class="footer__contacts contacts-footer">
-              </div>
+              <div class="footer__contacts contacts-footer"></div>
             </div>
           </div>
         </div>

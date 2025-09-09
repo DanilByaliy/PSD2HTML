@@ -1,6 +1,7 @@
 import "./style.scss";
 import "./spoilers";
 import "./burger-menu";
+import "./swiper";
 import { isMobile } from "./utils";
 
 // Sub menu
