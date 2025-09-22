@@ -90,6 +90,16 @@ body {
   }
 }
 
+._ibg {
+  position: relative;
+}
+
+._ibg img {
+  position: absolute;
+  display: block;
+  width: 100%;
+}
+
 .slider-arrows {
   display: grid;
   grid-template-columns: repeat(2, 48px);
