@@ -1,8 +1,11 @@
 import "./style.scss";
-import "./spoilers";
-import "./burger-menu";
-import "./swiper";
-import { isMobile } from "./utils";
+import "./scripts/spoilers";
+import "./scripts/burger-menu";
+import "./scripts/swiper";
+import { isMobile } from "./scripts/utils";
+import { useDynamicAdapt } from "./scripts/dynamic-adapt.js";
+
+useDynamicAdapt();
 
 // Sub menu
 const subMenuTriggers = document.querySelectorAll(".menu__arrow");
@@ -42,3 +45,18 @@ document.addEventListener("click", (e) => {
     document.querySelector(".search-form").classList.remove("_active");
   }
 });
+
+//  Header
+
+const headerElement = document.querySelector(".header");
+
+const callback = (entries, observer) => {
+  if (entries[0].isIntersecting) {
+    headerElement.classList.remove("_scroll");
+  } else {
+    headerElement.classList.add("_scroll");
+  }
+};
+
+const headerObserver = new IntersectionObserver(callback);
+headerObserver.observe(headerElement);

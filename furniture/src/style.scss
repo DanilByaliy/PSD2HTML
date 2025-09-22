@@ -1,3 +1,5 @@
+@use "./styles/_iconsfont";
+
 $mainColor: #3a3a3a;
 $orangeColor: #e89f71;
 $grayColor: #898989;
@@ -104,16 +106,34 @@ body {
   cursor: pointer;
 
   &_prev {
-    rotate: 180deg;
+    &::before {
+      display: block;
+      rotate: 90deg;
+    }
   }
 
   &_next {
+    &::before {
+      display: block;
+      rotate: -90deg;
+    }
   }
 
   @media (any-hover: hover) {
     &:hover {
       color: #fff;
       background-color: rgba(232, 159, 113, 1);
+    }
+  }
+
+  &__white {
+    box-shadow: 0 4px 14px 1px rgba(0, 0, 0, 0.16);
+    background-color: #fff;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $orangeColor;
+        color: #fff;
+      }
     }
   }
 }
@@ -134,6 +154,7 @@ body {
   position: relative;
   cursor: pointer;
   margin-block: 2px;
+  margin-inline: 0;
 
   &:not(:last-child) {
     margin-right: 12px;
@@ -159,8 +180,8 @@ body {
     height: 100%;
     border-radius: 50%;
     border: 1px solid $orangeColor;
-    transition: scale 0.3s ease 0s;
-    scale: 0;
+    // transition: scale 0.3s ease 0s;
+    // scale: 0;
   }
 }
 
@@ -169,9 +190,9 @@ body {
     background-color: orange;
   }
 
-  &::before {
-    scale: 1;
-  }
+  // &::before {
+  //   scale: 1;
+  // }
 }
 
 .wrapper {
@@ -194,8 +215,34 @@ body {
   width: 100%;
   top: 0;
   left: 0;
+  min-height: 40px;
+  @media (max-width: $md3+px) {
+    min-height: 5px;
+  }
+
+  &._scroll {
+    .header__wrapper {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        .header__wrapper {
+          background-color: rgba(255, 255, 255, 0.9);
+        }
+      }
+    }
+
+    .header__body {
+      min-height: 50px;
+      @media (min-width: $md2+px) {
+        min-height: 70px;
+      }
+    }
+  }
 
   &__wrapper {
+    transition: background-color 0.3s ease 0s;
     position: fixed;
     width: 100%;
     top: 0;
@@ -207,6 +254,7 @@ body {
   }
 
   &__body {
+    transition: min-height 0.3s ease 0s;
     display: flex;
     align-items: center;
     padding-block: 5px;
@@ -223,7 +271,7 @@ body {
   &__main {
     display: flex;
     align-items: start;
-    flex: 0 0 calc(494 / 1270) * 100%;
+    flex: 0 0 calc(494 / 1240) * 100%;
     @media (max-width: $md2+px) {
       flex: 1 1 auto;
     }
@@ -242,7 +290,7 @@ body {
   }
 
   &__search {
-    @include adaptiveValue("gap", 32, 15);
+    @include adaptiveValue("padding-right", 32, 15);
     @media (min-width: $md2+px) {
       flex: 1 1 auto;
     }
@@ -365,6 +413,7 @@ body {
     margin-left: 6px;
     transition: all 0.3s ease 0s;
     font-size: 8px;
+    background-color: transparent;
     @media (max-width: $md3+px) {
       font-size: 14px;
 
@@ -443,6 +492,8 @@ body {
     z-index: 5;
     font-size: 22px;
     color: #262f56;
+    background-color: transparent;
+
     @media (min-width: $md2+px) {
       display: none;
     }
@@ -471,6 +522,7 @@ body {
     height: 45px;
     font-size: 15px;
     color: #333333;
+    background-color: transparent;
   }
 
   &__input {
@@ -478,6 +530,10 @@ body {
     color: $darkColor;
     width: 100%;
     padding-right: 20px;
+
+    &:focus {
+      outline: none;
+    }
   }
 }
 
@@ -507,6 +563,12 @@ body {
       border-radius: 50%;
       aspect-ratio: 1;
       @include adaptiveValue("width", 40, 30);
+
+      & img {
+        object-fit: contain;
+        display: block;
+        max-width: 100%;
+      }
     }
   }
 }
@@ -637,12 +699,18 @@ body {
   }
 
   &__content {
+    align-self: flex-start;
     flex: 0 0 calc(494 / 1240) * 100%;
+    @include adaptiveValue("margin-bottom", 80, 15);
+    @media (max-width: $md2+px) {
+      margin: 0 -15px;
+    }
   }
 
   &__slider {
     flex: 1 1 auto;
     min-width: 0;
+    align-self: flex-end;
 
     @media (min-width: $md2+px) {
       padding-left: 32px;
@@ -707,40 +775,134 @@ body {
     }
   }
 }
+
 .slider-main {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+
+  @media (max-width: $md2+px) {
+    align-items: stretch !important;
+    flex-direction: column-reverse !important;
+  }
+
   &__controls {
+    align-self: stretch;
     margin-bottom: 20px;
+    @media (max-width: $md2+px) {
+      margin-top: 10px;
+    }
   }
 
   &__body {
+    overflow: visible !important;
+    margin-inline: unset !important;
+
+    @media (min-width: $md2+px) {
+      @include adaptiveValue("width", 934, 290);
+    }
+
+    @media (max-width: $md2+px) {
+      margin: 0 -15px !important;
+    }
   }
 
   &__slide {
+    position: relative;
   }
 
   &__image {
+    padding-bottom: 59%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__image img {
+    position: absolute;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    max-width: 100%;
+    width: 100%;
   }
 
   &__content {
+    min-width: 295px;
+    max-height: 300px;
+    overflow: auto;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.72);
+    @include adaptiveValue("padding", 24, 15);
+
+    @media (min-width: $md3+px) {
+      position: absolute;
+      min-width: 350px;
+      @include adaptiveValue("bottom", 40, 1);
+      @include adaptiveValue("right", 40, 1);
+    }
+
+    @supports (
+      (--webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))
+    ) {
+      background-color: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(31px);
+    }
   }
 
   &__title {
+    font-weight: 600;
+    line-height: 1.2;
+    &:not(:last-child) {
+      margin-bottom: calc(4 / 28) * 1em;
+    }
+
+    @include adaptiveValue("font-size", 28, 22);
   }
 
   &__text {
+    line-height: 1.5;
+    color: $grayColor;
+    &:not(:last-child) {
+      margin-bottom: calc(8 / 16) * 1em;
+    }
   }
 
   &__price {
+    display: flex;
+    flex-direction: row-reverse;
+    line-height: 1.5;
+    font-weight: 600;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptiveValue("font-size", 20, 16);
+
+    &::before {
+      margin-left: 10px;
+      font-size: 12px;
+    }
   }
 }
 .controls-slider-main {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   &__dots {
+    flex: 1 1 auto;
+
+    @media (min-width: $md2+px) {
+      padding-left: 20px;
+    }
+
+    @media (max-width: $md2+px) {
+      justify-content: center;
+    }
   }
 
   &__arrows {
+    @media (max-width: $md2+px) {
+      display: none;
+    }
   }
 }
 
