@@ -913,6 +913,52 @@ body {
 .swiper-slide {
 }
 
+.advantages {
+  @include adaptiveValue("padding-block", 88, 30);
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: grid;
+    padding-block: 15px;
+    grid-template: auto auto / 85px 1fr;
+
+    @media (max-width: $md2+px) {
+      min-width: 280px;
+    }
+
+    @media (max-width: $md3+px) {
+      grid-template: auto auto / auto 1fr;
+    }
+  }
+
+  &__icon {
+    text-align: center;
+    align-self: center;
+    grid-row: span 2;
+
+    @media (max-width: $md3+px) {
+      padding-right: 15px;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: calc(2 / 18) * 1em;
+  }
+
+  &__text {
+    line-height: 1.5;
+    color: $grayColor;
+  }
+}
+
 .products {
   @include adaptiveValue("padding-bottom", 44, 30);
 
