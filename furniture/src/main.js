@@ -161,3 +161,81 @@ const loadProducts = (data) => {
     productsItems.insertAdjacentHTML("beforeend", template);
   });
 };
+
+// Add to card
+const addToCardButtons = document.querySelectorAll(".actions-product__button");
+
+addToCardButtons.forEach((button) =>
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    const targetElement = event.target;
+    const productId = targetElement.closest(".item-product").dataset.pid;
+    addToCard(targetElement, productId);
+  }),
+);
+
+const addToCard = (productButton, productId) => {
+  if (productButton.classList.contains("_hold")) {
+    return;
+  }
+  productButton.classList.add("_hold");
+  productButton.classList.add("_fly");
+
+  const card = document.querySelector(".cart-header__icon");
+  const product = document.querySelector(`[data-pid="${productId}"`);
+  const productImage = product.querySelector(".item-product__image");
+  const productImageFly = productImage.cloneNode(true);
+
+  const productImageFlyWidth = productImage.offsetWidth;
+  const productImageFlyHeight = productImage.offsetHeight;
+  const productImageFlyTop = productImage.getBoundingClientRect().top;
+  const productImageFlyLeft = productImage.getBoundingClientRect().left;
+
+  productImageFly.setAttribute("class", "_flyImage _ibg");
+  productImageFly.style.cssText = `
+  left: ${productImageFlyLeft}px;
+  top: ${productImageFlyTop}px;
+  width: ${productImageFlyWidth}px;
+  height: ${productImageFlyHeight}px;
+  `;
+
+  document.body.append(productImageFly);
+
+  const cardTop = card.getBoundingClientRect().top;
+  const cardLeft = card.getBoundingClientRect().left;
+
+  productImageFly.style.cssText = `
+  left: ${cardLeft}px;
+  top: ${cardTop}px;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  `;
+
+  productImageFly.addEventListener("transitionend", () => {
+    if (!productButton.classList.contains("_fly")) {
+      return;
+    }
+    productImageFly.remove();
+    updateCart(productButton, productId);
+    productButton.classList.remove("_fly");
+  });
+
+  productButton.classList.remove("_hold");
+};
+
+const updateCart = (productButton, productId, productAdd = true) => {
+  const cart = document.querySelector(".cart-header");
+  const cartIcon = cart.querySelector(".cart-header__icon");
+  const cartQuantity = cartIcon.querySelector("span");
+  const cartProduct = document.querySelector(`[data-cart-pid="${productId}"`);
+  const cartList = document.querySelector(".cart-list");
+
+  if (productAdd) {
+    if (cartQuantity) {
+      cartQuantity.innerHTML = ++cartQuantity.innerHTML;
+    } else {
+      cartIcon.insertAdjacentHTML("beforeend", "<span>1</span>");
+    }
+  }
+};
