@@ -162,7 +162,35 @@ const loadProducts = (data) => {
   });
 };
 
-// Add to card
+// Header cart list
+
+document.addEventListener("click", (event) => {
+  const targetElement = event.target;
+
+  if (
+    targetElement.classList.contains("cart-header__icon") ||
+    targetElement.closest(".cart-header__icon")
+  ) {
+    event.preventDefault();
+    if (document.querySelector(".cart-list").children.length > 0) {
+      console.log("hi");
+
+      document.querySelector(".cart-header").classList.toggle("_active");
+    }
+  } else if (
+    !targetElement.closest(".cart-header") &&
+    !targetElement.classList.contains("actions-product__button")
+  ) {
+    document.querySelector(".cart-header").classList.remove("_active");
+  }
+
+  if (targetElement.classList.contains("cart-list__delete")) {
+    event.preventDefault();
+    const productId = targetElement.closest(".cart-list__item").dataset.cartPid;
+    updateCart(targetElement, productId, false);
+  }
+});
+
 const addToCardButtons = document.querySelectorAll(".actions-product__button");
 
 addToCardButtons.forEach((button) =>
@@ -220,8 +248,6 @@ const addToCard = (productButton, productId) => {
     updateCart(productButton, productId);
     productButton.classList.remove("_fly");
   });
-
-  productButton.classList.remove("_hold");
 };
 
 const updateCart = (productButton, productId, productAdd = true) => {
@@ -236,6 +262,52 @@ const updateCart = (productButton, productId, productAdd = true) => {
       cartQuantity.innerHTML = ++cartQuantity.innerHTML;
     } else {
       cartIcon.insertAdjacentHTML("beforeend", "<span>1</span>");
+    }
+
+    if (cartProduct) {
+      const cartProductQuantity = cartProduct.querySelector(
+        ".cart-list__quantity span",
+      );
+      cartProductQuantity.innerHTML = ++cartProductQuantity.innerHTML;
+    } else {
+      const product = document.querySelector(`[data-pid="${productId}"`);
+      const cartproductImage = product.querySelector(
+        ".item-product__image",
+      ).innerHTML;
+      const cartProductTitle = product.querySelector(
+        ".item-product__title",
+      ).innerHTML;
+      const cartProductContent = `
+      <li data-cart-pid="${productId}" class="cart-list__item">
+        <a href="" class="cart-list__image _ibg">${cartproductImage}</a>
+        <div class="cart-list__body">
+          <a href="#!" class="cart-list__title">${cartProductTitle}</a>
+          <div class="cart-list__quantity">
+            Quantity: <span>1</span>
+          </div>
+          <a href="#!" class="cart-list__delete">Delete</a>
+        </div>
+      </li>`;
+      cartList.insertAdjacentHTML("beforeend", cartProductContent);
+    }
+    productButton.classList.remove("_hold");
+  } else {
+    const cartProductQuantity = cartProduct.querySelector(
+      ".cart-list__quantity span",
+    );
+    cartProductQuantity.innerHTML = --cartProductQuantity.innerHTML;
+
+    if (!parseInt(cartProductQuantity.innerHTML)) {
+      cartProduct.remove();
+    }
+
+    const cartQuantityValue = --cartQuantity.innerHTML;
+
+    if (cartQuantityValue) {
+      cartQuantity.innerHTML = cartQuantityValue;
+    } else {
+      cartQuantity.remove();
+      cart.classList.remove("_active");
     }
   }
 };
