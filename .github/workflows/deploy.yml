@@ -1,4 +1,4 @@
-name: Deploy React + Vite to Github Pages
+name: Deploy Projects
 
 on:
   workflow_dispatch:
@@ -10,7 +10,8 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     strategy:
-      matrix: { dir: ["whitepace"] }
+      matrix:
+        project: [whitepace]
 
     steps:
       # Checkout the repository
@@ -25,12 +26,12 @@ jobs:
 
       # Install Dependencies
       - name: Install Dependencies
-        working-directory: ${{ matrix.dir }}
+        working-directory: ${{ matrix.project }}
         run: npm install
 
       # Build the project
       - name: Build project
-        working-directory: ${{ matrix.dir }}
+        working-directory: ${{ matrix.project }}
         run: npm run build
 
       # Deploy to github pages
@@ -38,4 +39,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
+          publish_dir: ./${{ matrix.project }}/dist
+          destination_dir: ${{ matrix.project }}
