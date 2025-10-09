@@ -465,3 +465,146 @@ h4 {
     }
   }
 }
+
+/* Mission */
+.mission {
+  margin-bottom: 80px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 30px;
+  }
+
+  &__inner {
+    display: flex;
+    column-gap: 36px;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__body {
+    padding-right: 42px;
+
+    @media (max-width: 767px) {
+      padding-right: unset;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__text-wrapper {
+    @media (max-width: 767px) {
+      max-width: 500px;
+      margin-inline: auto;
+    }
+  }
+
+  &__video-wrapper {
+    position: relative;
+  }
+
+  &__video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  &__video-play-button {
+    position: absolute;
+    width: 100px;
+    aspect-ratio: 1;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 15px;
+      height: 27px;
+      background: url("./images/play-button-content.svg");
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      border-radius: 50%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    margin-bottom: 33px;
+  }
+
+  &__news {
+    max-width: 420px;
+    padding: 38px 40px;
+    background-color: #fff;
+
+    @media (max-width: 767px) {
+      padding: 10px;
+      max-width: 100%;
+    }
+  }
+
+  &__news-title {
+    margin-bottom: 20px;
+  }
+}
+
+.news {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 44px;
+
+    @media (max-width: 767px) {
+      justify-content: center;
+      column-gap: 20px;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 500px) {
+      row-gap: 30px;
+    }
+  }
+
+  &__item {
+    max-width: 45%;
+    min-width: 220px;
+  }
+
+  &__date {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: $colorAccent;
+  }
+
+  &__title {
+    font-size: 22px;
+    margin-bottom: 19px;
+  }
+
+  &__description {
+    font-size: 15px;
+    color: $colorGrey;
+  }
+
+  &__button {
+    display: inline-block;
+    color: $colorAlternate;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.95px;
+    text-transform: uppercase;
+    margin-top: 38px;
+  }
+}
