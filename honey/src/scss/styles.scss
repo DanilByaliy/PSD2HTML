@@ -66,6 +66,10 @@ body {
   font-size: 18px;
   background-color: $colorBackground;
   overflow-x: hidden;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
 }
 
 h1,
@@ -80,15 +84,35 @@ h6 {
 
 h1 {
   font-size: 120px;
+
+  @media (max-width: 767px) {
+    font-size: 36px;
+  }
 }
 h2 {
   font-size: 48px;
+
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
 }
 h3 {
   font-size: 36px;
+
+  @media (max-width: 767px) {
+    font-size: 26px;
+  }
 }
 h4 {
   font-size: 26px;
+
+  @media (max-width: 767px) {
+    font-size: 36px;
+
+    @media (max-width: 767px) {
+      font-size: 22px;
+    }
+  }
 }
 
 .container {
@@ -606,5 +630,136 @@ h4 {
     letter-spacing: 1.95px;
     text-transform: uppercase;
     margin-top: 38px;
+  }
+}
+
+/* Products */
+.products {
+  margin-bottom: 100px;
+  padding-top: 42px;
+
+  &__heading {
+    max-width: 620px;
+    margin-inline: auto;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 60px;
+    row-gap: 20px;
+    text-align: center;
+
+    @media (max-width: 1024px) {
+      column-gap: 40px;
+    }
+  }
+
+  &__item {
+    @media (max-width: 1024px) {
+      max-width: 348px;
+    }
+  }
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &_new {
+    &::after {
+      content: "new";
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      padding: 2px 2px 2px 5px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background-color: $colorAccent;
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 380px;
+    aspect-ratio: 1;
+    margin-bottom: 30px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    max-width: 110%;
+    height: auto;
+    display: inline;
+    object-fit: fill;
+
+    @media (max-width: 767px) {
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      object-position: bottom;
+    }
+  }
+
+  &__body {
+    max-width: 360px;
+  }
+
+  &__title {
+    margin-bottom: 9px;
+  }
+
+  &__price {
+    display: block;
+    margin-bottom: 3px;
+    color: $colorAccent;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  &__description {
+    margin-bottom: 25px;
+    font-size: 15px;
+    color: $colorGrey;
+
+    @media (max-width: 1024px) {
+      max-width: 500px;
+      margin-inline: auto;
+    }
+  }
+
+  &__button {
+    color: $colorAlternate;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-flex;
+    column-gap: 12px;
+    align-items: center;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 14px;
+      height: 12px;
+      background: url("./images/cart.svg") center/cover;
+    }
   }
 }
